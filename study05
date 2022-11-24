@@ -1,0 +1,36 @@
+1. 변수명, 함수명을 간단하게 작성하기 but 의미가 명확한 이름만 사용
+2. 반복되는 부분이 있다면 함수 혹은 변수로 만들어 사용하기
+3. 한글 사용 지양하기
+4. 괄호, 공백, 구분자 생략하기 
+=> ex) if문의 처리해야 될 코드가 한 줄일 때 조건과 같은 줄에 작성 vs if문에 새로운 코드를 추가할 때 번거롭기 때문에 중괄호는 생략하지 않기 
+5. 반복문 사용하기 
+=> 같은 작업을 여러번 수행할 때에는 반복문을 사용하기 vs 반복되는 횟수가 적다면 그냥 코드 작성하기
+6. 다양한 연산자 사용하기 ex) 비트 연산자(<<, >>), &, ^
+7. 필요없는 코드 삭제하기
+8. 필요한 주석만 달기
+9. 지난 코드는 지우기
+10. url shortener 같은 서비스를 사용하여 간단하게 줄일 수 있는 부분들은 줄이기
+11. 부동소수점 사용 지양하기 => 정수 자료형과 다르게 특정한 규격이 정해진 것이기 때문에 연산 과정에서 정수형보다 더 많은 시간을 소요한다.
+
+
+import java.util.Scanner;
+ 
+public class Main {  // public 삭제 / interface에서 메인 메소드 선언하기
+	public static void main(String[] args) { //매개변수명 args에서 바꾸기
+ 
+		Scanner in = new Scanner(System.in); //객체명 줄이기
+                         // scanner 대신 바이트 스트림 사용하기
+		int a = in.nextInt(); 
+		int b = in.nextInt();
+		System.out.print(a + b);
+	}
+}
+
+=>
+interface Main {
+	static void main(String[] s) throws Exception {
+		byte[] a = new byte[3];
+		System.in.read(a);
+		System.out.print(a[0] + a[2] - 96);
+	}
+}
